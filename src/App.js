@@ -8,8 +8,6 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const jonas = "jonas";
-
   useEffect(() => {
     fetch(API_ENDPOINT)
       .then((res) => res.json())
