@@ -1,27 +1,27 @@
 on: [push, pull_request]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verify git repository
-        uses: actions/checkout@v2
+  # eslint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Verify git repository
+  #       uses: actions/checkout@v2
       
-      - name: Install node with the version
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
+  #     - name: Install node with the version
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14
 
-      - name: install dependencies
-        run: npm install
+  #     - name: install dependencies
+  #       run: npm install
 
-      - name: Verify lint errors
-        run: npx eslint .
+  #     - name: Verify lint errors
+  #       run: npx eslint .
   
 
   deploy-preview:
     runs-on: ubuntu-20.04
-    needs: [eslint]
+    # needs: [eslint]
     steps:
       - name: Checkou
         uses: actions/checkout@v2
