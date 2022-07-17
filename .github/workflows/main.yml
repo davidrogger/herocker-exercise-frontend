@@ -17,3 +17,21 @@ jobs:
 
       - name: Verify lint errors
         run: npx eslint .
+  
+
+  deploy-preview:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkou
+        uses: actions/checkout@v2
+
+      - name: Install dependencies and run the application
+        run: |
+          npm install
+          npm run build
+
+      - name: Preview generator
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: dvd-frontend-252
+          source-dir: ./build/
