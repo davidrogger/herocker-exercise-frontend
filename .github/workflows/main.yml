@@ -21,6 +21,7 @@ jobs:
 
   deploy-preview:
     runs-on: ubuntu-20.04
+    needs: [eslint]
     steps:
       - name: Checkou
         uses: actions/checkout@v2
